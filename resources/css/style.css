@@ -188,92 +188,52 @@ top: 1px;
     color: #272019;*/
     color: #423f3b;
     background-color: #ccc;
-
-}
-#skills h3 {
-    text-align: left;
-}
-.skills-lists {
-    display: grid;
-    grid-template-areas: repeat(2, auto) / repeat(3, 1fr);
-}
-.technologies {
-    grid-area: 1 / 1 / span 1 / span 1;
-}
-.frameworks {
-    grid-area: 1 / 2 / span 1 / span 1;
-}
-.other {
-    grid-area: 1 / 3 / span 1 / span 1;
-}
-.skills-lists li {
-    margin: 0.2rem 1rem;
-}
-.logos {
-    grid-area: 2 / 1 / span 1 / span 3;
-    display: flex;
-    flex-wrap: wrap;
 }
 
-@media only screen and (max-width: 700px) {
-    .skills-lists {
-        grid-template-areas: repeat(3 auto) / repeat(2, 1fr);
-    }
-    .technologies {
-        grid-area: 1 / 1 / span 2 / span 1;
-    }
-    .frameworks {
-        grid-area: 1 / 2 / span 1 / span 1;
-    }
-    .other {
-        grid-area: 2 / 2 / span 1 / span 1;
-    }
-    .logos {
-        grid-area: 3 / 1 / span 1 / span 2;
-    }
-}
-@media only screen and (max-width: 400px) {
-    .skills-lists {
-        grid-template-areas: repeat(4 auto) / 1fr;
-    }
-    .technologies {
-        grid-area: 1 / 1 / span 1 / span 1;
-    }
-    .frameworks {
-        grid-area: 2 / 1 / span 1 / span 1;
-    }
-    .other {
-        grid-area: 3 / 1 / span 1 / span 1;
-    }
-    .logos {
-        grid-area: 4 / 1 / span 1 / span 1;
-    }
-}
-
-/*
-.skills-lists {
+.skills-area {
     display: flex;
     justify-content: space-evenly;
-    flex-wrap: wrap;
-    align-content: flex-start;
+    
 }
-.skills-items {
+.skills-area li {
+    margin: 0.2rem 1rem;
+}
+.code-demo {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-} 
+    justify-content: space-around;
+}
 
-*/
 .logos {
     display: flex;
-    justify-content: center;
-}
-.logos img {
-    width: auto;
-    height: 30px;
-    margin: 5px;
+    justify-content: space-between;
 }
 
+.logos img {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+    margin: 0;
+}
+/*
+.logos img:not(:first-of-type) {
+    border-left: none;
+}
+*/
+#codeWindow {
+    padding: 0.3rem;
+    font-family: 'Courier New', monospace;
+    color: white;
+    font-size: 0.8rem;
+    background-color: #2b2b2b;
+    width: 450px;
+    min-height: 200px;
+    border: 2px solid black;
+}
+#codeWindow .keyword {
+    color: red;
+    font-weight: bolder;
+}
 
 /* Projects section */
 #projects {
@@ -284,6 +244,6 @@ top: 1px;
 /* Contact section */
 #contact {
     /*background-color: #413f3f;*/
-    background-color: #1f1f1f;
+    background-color: #1e1e1e;
     color: #ccc;
 }
