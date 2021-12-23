@@ -198,6 +198,9 @@ top: 1px;
 .skills-area li {
     margin: 0.2rem 1rem;
 }
+.other-skills {
+    margin-top: 3rem;
+}
 .code-demo {
     display: flex;
     flex-direction: column;
@@ -210,16 +213,12 @@ top: 1px;
 }
 
 .logos img {
-    border: 1px solid black;
+    /*border: 1px solid black;*/
     width: 100px;
     height: 100px;
     margin: 0;
 }
-/*
-.logos img:not(:first-of-type) {
-    border-left: none;
-}
-*/
+
 #codeWindow {
     padding: 0.3rem;
     font-family: 'Courier New', monospace;
@@ -230,10 +229,21 @@ top: 1px;
     min-height: 200px;
     border: 2px solid black;
 }
-#codeWindow .keyword {
-    color: red;
-    font-weight: bolder;
+#codeWindow p {
+    margin: 0;
 }
+#codeWindow .comment {
+    color: #679b4e;
+}
+#codeWindow .fd, #codeWindow .keyword {
+    color: #cd7920;
+    font-weight: bold;
+}
+#codeWindow .fn {
+    color: #ffc860;
+    font-weight: bold;
+}
+
 
 /* Projects section */
 #projects {

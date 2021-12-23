@@ -16,6 +16,7 @@
     <link href="resources/css/reset.css" rel="stylesheet">
     <link href="resources/css/style.css" rel="stylesheet">
     <script src="resources/scripts/storeScroll.js"></script>
+    <script src="resources/scripts/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <header>
@@ -66,109 +67,39 @@
         <!-- Skills section -->
         <section id="skills">
             <h2>Skills</h2>
-            <div class="skills-lists">
-                <div class="technologies">
-                    <h3>Technologies</h3>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Javascript</li>
-                        <li>Python</li>
-                        <li>PHP</li>
-                        <li>Java</li>
-                        <li>C</li>
-                        <li>MySQL</li>
-                        <li>Git</li>
-                    </ul>
+            <div class="skills-area">
+                <ul>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>Javascript</li>
+                    <li>NodeJS</li>
+                    <li>Jquery</li>
+                    <li>Python</li>
+                    <li>PHP</li>
+                    <li>Java</li>
+                    <li>MySQL</li>
+                    <li>Git</li>
+                    <li>Github</li>
+                </ul>
+                <div class="code-demo">
+                    <div class="logos">
+                        <img id="js" src="resources/images/logos/1024px-JavaScript-logo.png" alt="">
+                        <img id="py" src="resources/images/logos/python-logo.png" alt="">
+                        <img id="php" src="resources/images/logos/php square.png" alt="">
+                        <img id="java" src="resources/images/logos/Java-Emblem.png" alt="">
+                    </div>
+                    <div id="codeWindow">
+                        <p>Click on a language logo above to see some sample code</p>
+                    </div>
                 </div>
-                <div class="frameworks">
-                    <h3>Frameworks &amp; Libraries</h3>               
-                    <ul>
-                        <li>NodeJS</li>
-                        <li>Jquery</li>
-                    </ul>
-                </div>
-                <div class="other">
-                    <h3>Other</h3>
-                    <ul>
-                        <li>Github</li>
-                        <li>VMware</li>
-                        <li>WordPress</li>
-                        <li>ArcGIS</li>
-                        <li>QGIS</li>
-                        <li>MapInfo</li>
-                    </ul>
-                </div>
-                <div class="logos">
-                    <img src="resources/images/logos/2048px-HTML5_logo_and_wordmark.png" alt="">
-                    <img src="resources/images/logos/CSS3_logo_and_wordmark.png" alt="">
-                    <img src="resources/images/logos/1024px-JavaScript-logo.png" alt="">
-                    <img src="resources/images/logos/jquery.png" alt="">
-                    <img src="resources/images/logos/nodejs.png" alt="">
-                    <img src="resources/images/logos/python-logo.png" alt="">
-                    <img src="resources/images/logos/PHP-logo.png" alt="">
-                    <img src="resources/images/logos/Java-Emblem.png" alt="">
-                    <img src="resources/images/logos/695px-C_Programming_Languages.png" alt="">
-                    <img src="resources/images/logos/logo-mysql-170x115.png" alt="">
-                    <img src="resources/images/logos/Git-Icon-1788C.png" alt="">
-                    <img src="resources/images/logos/Octocat.png" alt="">
+            </div>
+            <div class="other-skills">
+                <div>
+                    I also have experience in project management, software testing (functional, SIT and UAT) and software documentation.
                 </div>
             </div>
         </section>
 
-<!--
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills-lists">
-                <div class="skills-items">
-                    <h3>Technologies</h3>
-                    <ul>
-                        <li>HTML</li>
-                        <li>CSS</li>
-                        <li>Javascript</li>
-                        <li>Python</li>
-                        <li>PHP</li>
-                        <li>Java</li>
-                        <li>C</li>
-                        <li>MySQL</li>
-                        <li>Git</li>
-                    </ul>
-                </div>
-                <div class="skills-items">
-                    <h3>Frameworks &amp; Libraries</h3>
-                    <ul>
-                        <li>NodeJS</li>
-                        <li>Jquery</li>
-                    </ul>
-                </div>
-                <div class="skills-items">
-                    <h3>Other</h3>
-                    <ul>
-                        <li>Github</li>
-                        <li>VMware</li>
-                        <li>WordPress</li>
-                        <li>ArcGIS</li>
-                        <li>QGIS</li>
-                        <li>MapInfo</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="logos">
-                <img src="resources/images/logos/2048px-HTML5_logo_and_wordmark.png" alt="">
-                <img src="resources/images/logos/CSS3_logo_and_wordmark.png" alt="">
-                <img src="resources/images/logos/1024px-JavaScript-logo.png" alt="">
-                <img src="resources/images/logos/jquery.png" alt="">
-                <img src="resources/images/logos/nodejs.png" alt="">
-                <img src="resources/images/logos/python-logo.png" alt="">
-                <img src="resources/images/logos/PHP-logo.png" alt="">
-                <img src="resources/images/logos/Java-Emblem.jpeg" alt="">
-                <img src="resources/images/logos/695px-C_Programming_Languages.png" alt="">
-                <img src="resources/images/logos/logo-mysql-170x115.png" alt="">
-                <img src="resources/images/logos/Git-Icon-1788C.png" alt="">
-                <img src="resources/images/logos/Octocat.png" alt="">
-            </div>
-        </section>
-    -->
         <!-- Projects section -->
 
         <section id="projects">
@@ -219,6 +150,7 @@
     <footer>
 
     </footer>
+    <script src="resources/scripts/codeWindow.js"></script>
 
 </body>
 </html>
