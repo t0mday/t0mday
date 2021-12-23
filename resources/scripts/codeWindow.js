@@ -13,7 +13,7 @@ let timer;
 
 function writeCode(event) {
     clearInterval(timer);
-    const content = selectCode(event.target);
+    const content = formatCode(selectCode(event.target));
     let i=0;
     timer = setInterval(() => {
         if(i >= content.length) {
@@ -35,21 +35,36 @@ function writeCode(event) {
 
 function selectCode(lang) {
     switch(lang) {
-        case js: return 0;
-        case py: return formatCode(pyCode);
-        case php: return 0;
-        case java: return 0;
+        case js: return jsCode;
+        case py: return pyCode;
+        case php: return phpCode;
+        case java: return javaCode;
     }  
 }
 
+const jsCode = 
+`<span class="comment">// Javascript: </span>
+`;
 const pyCode = 
-`<span class="comment"># Deep clone n-dimensional list</span>
+`<span class="comment"># Python: Deep clone n-dimensional list</span>
 <span class="fd">def</span> <span class="fn">deep_clone</span>(list_in):
     <span class="keyword">if</span>(type(list_in) == list):
         <span class="keyword">return</span> [deep_clone(layer) <span class="keyword">for</span> layer <span class="keyword">in</span> list_in]
     <span class="keyword">else</span>:
         <span class="keyword">return</span> list_in
 `;
+const phpCode = 
+`<span class="comment">// PHP: </span> 
+`;
+const javaCode =  
+`<span class="comment">// Java: Convert char array to Character list</span>
+public static List<Character> toList(char[] arr) {
+    return String.valueOf(arr) <span class="comment">// convert to String</span>
+        .chars() <span class="comment">// convert to chars intstream</span>
+        .mapToObj(c -> (char) c) <span class="comment">// ->char->Character</span>
+        .collect(Collectors.toList()); 
+}`;
+
 
 function formatCode(code) {
     let formattedArray = [];
@@ -69,7 +84,7 @@ function formatCode(code) {
         } else if(code[i] === '\n') {
             formattedArray.push('<br>');
         } else if(code[i] === ' ') {
-            formattedArray.push('&nbsp;')
+            formattedArray.push('&nbsp;') // this is preventing word-wrap. change to only when consecutive if a problem
         }else {
             formattedArray.push(code[i]);
         }
