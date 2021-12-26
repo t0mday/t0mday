@@ -7,26 +7,39 @@ at a time and keywords are colour-coded by type, according to CSS stylesheet */
 
 // code samples
 const jsCode = 
-`<span class="comment">// Javascript: </span>
-`;
+`<span class="comment">// Javascript: Rotate a 'square' 2-D array of any size</span>
+<span class="keyword">function</span> <span class="fnName">arrayRotateClock90</span>(arr) {
+    <span class="comment">// map each cell's value to row equal to starting 
+    column, and to column equal to starting row</span>
+    <span class="keyword">return</span> arr.<span class="fnName">map</span>((row, i) <span class="keyword">=></span> 
+        row.<span class="fnName">map</span>((cell, j) <span class="keyword">=></span> arr[arr.length-1-j][i]));
+}`;
 const pyCode = 
 `<span class="comment"># Python: Deep clone n-dimensional list</span>
-<span class="fd">def</span> <span class="fn">deep_clone</span>(list_in):
-    <span class="keyword">if</span>(type(list_in) == list):
-        <span class="keyword">return</span> [deep_clone(layer) <span class="keyword">for</span> layer <span class="keyword">in</span> list_in]
+<span class="keyword">def</span> <span class="fnName">deep_clone</span>(list_in: list) -> list:
+    <span class="keyword">if</span>(<span class="fnName">type</span>(list_in) == list):
+        <span class="comment"># recursively map layers</span>
+        <span class="keyword">return</span> [<span class="fnName">deep_clone</span>(layer) <span class="keyword">for</span> layer <span class="keyword">in</span> list_in]
     <span class="keyword">else</span>:
         <span class="keyword">return</span> list_in
 `;
 const phpCode = 
-`<span class="comment">// PHP: </span> 
-`;
+`<span class="comment">// PHP: Check if a number is prime</span> 
+<span class="keyword">function</span> <span class="fnName">is_prime</span>(int $num): bool {
+    <span class="keyword">if</span>($num < 2) <span class="keyword">return false</span>;
+    <span class="comment">// check all possible smaller-of-two divisors</span>
+    <span class="keyword">for</span>($i=2; $i<=<span class="fnName">sqrt</span>($num); $i++) {
+        <span class="keyword">if</span>($num % $i == 0) <span class="keyword">return false</span>;
+    }
+    <span class="keyword">return true</span>;
+}`;
 const javaCode =  
 `<span class="comment">// Java: Convert char array to Character list</span>
-public static List<Character> toList(char[] arr) {
-    return String.valueOf(arr) <span class="comment">// convert to String</span>
-        .chars() <span class="comment">// convert to chars intstream</span>
-        .mapToObj(c -> (char) c) <span class="comment">// ->char->Character</span>
-        .collect(Collectors.toList()); 
+<span class="keyword">public static</span> <span class="type">List</span>&lt;Character&gt; <span class="fnName">toList</span>(<span class="type">char</span>[] arr) {
+    <span class="keyword">return</span> String.<span class="fnName">valueOf</span>(arr) <span class="comment">// convert to String</span>
+        .<span class="fnName">chars</span>() <span class="comment">// convert to chars intstream</span>
+        .<span class="fnName">mapToObj</span>(c -> (<span class="type">char</span>) c) <span class="comment">// ->char->Character</span>
+        .<span class="fnName">collect</span>(Collectors.<span class="fnName">toList</span>()); 
 }`;
 
 // references to programming language logos in DOM

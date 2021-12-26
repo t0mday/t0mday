@@ -224,6 +224,7 @@ top: 1px;
     font-family: 'Courier New', monospace;
     color: white;
     font-size: 0.8rem;
+    line-height: 1.2rem;
     background-color: #2b2b2b;
     width: 450px;
     min-height: 200px;
@@ -235,13 +236,17 @@ top: 1px;
 #codeWindow .comment {
     color: #679b4e;
 }
-#codeWindow .fd, #codeWindow .keyword {
-    color: #cd7920;
-    font-weight: bold;
+#codeWindow .declareVar {
+    color: #0787f7;
 }
-#codeWindow .fn {
-    color: #ffc860;
-    font-weight: bold;
+#codeWindow .fnName {
+    color: #CF9175;
+}
+#codeWindow .keyword {
+    color: #C685C1;
+}
+#codeWindow .type {
+    color: #47C9AF;
 }
 
 
