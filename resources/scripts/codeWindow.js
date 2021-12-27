@@ -9,7 +9,7 @@ at a time and keywords are colour-coded by type, according to CSS stylesheet */
 const jsCode = 
 `<span class="comment">// Javascript: Rotate a 'square' 2-D array of any size</span>
 <span class="keyword">function</span> <span class="fnName">arrayRotateClock90</span>(arr) {
-    <span class="comment">// map each cell's value to row equal to starting 
+    <span class="comment">// map each cell's value to row opposite to starting 
     column, and to column equal to starting row</span>
     <span class="keyword">return</span> arr.<span class="fnName">map</span>((row, i) <span class="keyword">=></span> 
         row.<span class="fnName">map</span>((cell, j) <span class="keyword">=></span> arr[arr.length-1-j][i]));

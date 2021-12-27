@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com"> 
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;700&family=Oooh+Baby&family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/7054d061f6.js" crossorigin="anonymous"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="keywords" content="tom day, tomday.io, tom, day, developer, programmer, full stack developer, 
-    full stack engineer, web developer, front end, back end, html, css, sql, javascript, python, php, java, c#, uk, engineer, software">
+    <meta name="keywords" content="developer, programmer, engineer, front end, back end, sql, javascript, python, php, java, c#, uk">
     <meta name="author" content="Tom Day">
     <meta name="description" content="Tom Day's portfolio - Full Stack Developer">
     <title>Tom Day</title>
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
     <link href="resources/css/reset.css" rel="stylesheet">
     <link href="resources/css/style.css" rel="stylesheet">
     <script src="resources/scripts/storeScroll.js"></script>
     <script src="resources/scripts/jquery-3.6.0.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
     <header>
@@ -44,7 +47,9 @@
                     <h2>Full Stack Developer</h2>
                 </div>
                 <div class="down-arrow">
-                    <a class="scroll" href="#about"><img src="resources/images/scroll-arrow.png" alt="scroll down arrow"></a>
+                    <a class="scroll" href="#about">
+                        <i class="fas fa-angle-down fa-2x"></i>
+                    </a>
                 </div>
             </div>
             
@@ -151,6 +156,16 @@
 
     </footer>
     <script src="resources/scripts/codeWindow.js"></script>
+    <script>
+        function myFunc() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "mainNav") {
+                x.className += " responsive";
+            } else {
+                x.className = "mainNav";
+            }
+        }
+    </script>
 
 </body>
 </html>
