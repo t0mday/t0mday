@@ -15,6 +15,7 @@
     <link href="resources/css/reset.css" rel="stylesheet">
     <link href="resources/css/style.css" rel="stylesheet">
     <script src="resources/scripts/storeScroll.js"></script>
+    <script src="resources/scripts/mobileNav.js"></script>
     <script src="resources/scripts/jquery-3.6.0.min.js"></script>
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -23,14 +24,30 @@
 </head>
 <body>
     <header>
+
+        <!-- Navigation menu -->
+
         <nav>
-            <a id="logo" href="#top">Tom Day</a>
-            <ul>
+            <a class="homeNav" href="#top">Tom Day</a>
+            <ul class="nav-links">
+                <li><a href="#top">Home</a></li>
                 <li><a href="#about">About Me</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
+            <!-- Navigation menu button for mobiles (burger transforms to X when clicked) -->
+            <div class="mobNavButton">
+                <div class="menu">
+                    Menu
+                </div>
+                <div class="lines">
+                    <div class="line line1"></div>
+                    <div class="line line2"></div>
+                    <div class="line line3"></div>
+                </div>
+            </div>
+            </div>
         </nav>
     </header>
     <main>
@@ -41,7 +58,6 @@
             <div class="inner">
                 <div> </div>
                 <div class="portrait">  
-                    <form>Test<input type="color"></form> 
                     <h1>Tom Day</h1>
                     <img src="resources/images/portrait.png" alt="Tom Day">
                     <h2>Full Stack Developer</h2>
@@ -156,16 +172,5 @@
 
     </footer>
     <script src="resources/scripts/codeWindow.js"></script>
-    <script>
-        function myFunc() {
-            var x = document.getElementById("myTopnav");
-            if (x.className === "mainNav") {
-                x.className += " responsive";
-            } else {
-                x.className = "mainNav";
-            }
-        }
-    </script>
-
 </body>
 </html>
