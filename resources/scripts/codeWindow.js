@@ -2,6 +2,8 @@
 on the Skills page and writes selected code samples to the code window 
 underneath when a logo is clicked. 
 
+Only static code samples to be used.
+
 Code sample is written to the code window incrementally, growing by one letter 
 at a time and keywords are colour-coded by type, according to CSS stylesheet */
 
@@ -64,16 +66,18 @@ function writeCode(event) {
     clearInterval(timer); 
     // input array of formatted code to be written
     const content = formatCode(selectCode(event.target)); 
-
     let i=0; // interval 'loop' control variable
+    
     // set a repeating 15ms interval timer
     timer = setInterval(() => {
         if(i >= content.length) {
             clearInterval(timer); // clear interval timer when writing complete
             return;
         }
+
         // create section of code to be written (one letter or tag greater than previous)
         let codeItem = content.slice(0, i+1).join('');
+        
         // check if opening tag has been closed, and close it if not
         let openTags = codeItem.match(/<span[\w\W]+?>/g);
         let closedTags = codeItem.match(/<\/span>/g) || [];
@@ -81,10 +85,13 @@ function writeCode(event) {
             codeItem += '</span>';
         }
 
-        codeItem = '<p>' + codeItem + '</p>'; // Enclose in <p> tags
+        // write to codeWindow, replacing existing content
+        const fragment = new DocumentFragment();
+        const p = document.createElement('p');
+        p.innerHTML = codeItem; // static data only (no 3rd party or user-generated content involved)
+        fragment.appendChild(p);
+        document.querySelector('#codeWindow p').replaceWith(fragment);
 
-        // write to codewindow, replacing existing content
-        $('#codeWindow p').replaceWith(codeItem);
         i++;
     }, 15);
 }
