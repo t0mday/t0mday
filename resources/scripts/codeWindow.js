@@ -2,17 +2,16 @@
 on the Skills page and writes selected code samples to the code window 
 underneath when a logo is clicked. 
 
-Only static code samples to be used.
-
 Code sample is written to the code window incrementally, growing by one letter 
-at a time and keywords are colour-coded by type, according to CSS stylesheet */
+at a time and keywords are colour-coded by type, according to CSS stylesheet 
+
+Only controlled elements are appended to the DOM (span and br). Everything else is appended as text nodes */
 
 // code samples
 const jsCode = 
 `<span class="comment">// Javascript: Rotate a 'square' 2-D array of any size</span>
 <span class="keyword">function</span> <span class="fnName">arrayRotateClock90</span>(arr) {
-    <span class="comment">// map each cell's value to row opposite to starting 
-    column, and to column equal to starting row</span>
+    <span class="comment">// map each cell's value to row opposite to starting column, and to column equal to starting row</span>
     <span class="keyword">return</span> arr.<span class="fnName">map</span>((row, i) <span class="keyword">=></span> 
         row.<span class="fnName">map</span>((cell, j) <span class="keyword">=></span> arr[arr.length-1-j][i]));
 }`;
@@ -37,7 +36,7 @@ const phpCode =
 }`;
 const javaCode =  
 `<span class="comment">// Java: Convert char array to Character list</span>
-<span class="keyword">public static</span> <span class="type">List</span>&lt;Character&gt; <span class="fnName">toList</span>(<span class="type">char</span>[] arr) {
+<span class="keyword">public static</span> <span class="type">List</span><Character> <span class="fnName">toList</span>(<span class="type">char</span>[] arr) {
     <span class="keyword">return</span> String.<span class="fnName">valueOf</span>(arr) <span class="comment">// convert to String</span>
         .<span class="fnName">chars</span>() <span class="comment">// convert to chars intstream</span>
         .<span class="fnName">mapToObj</span>(c -> (<span class="type">char</span>) c) <span class="comment">// ->char->Character</span>
@@ -75,26 +74,60 @@ function writeCode(event) {
             return;
         }
 
-        // create section of code to be written (one letter or tag greater than previous)
-        let codeItem = content.slice(0, i+1).join('');
-        
-        // check if opening tag has been closed, and close it if not
-        let openTags = codeItem.match(/<span[\w\W]+?>/g);
-        let closedTags = codeItem.match(/<\/span>/g) || [];
-        if(openTags.length > closedTags.length) {  
-            codeItem += '</span>';
-        }
-
-        // write to codeWindow, replacing existing content
-        const fragment = new DocumentFragment();
+        // element to hold code to be added to the DOM
         const p = document.createElement('p');
-        p.innerHTML = codeItem; // static data only (no 3rd party or user-generated content involved)
-        fragment.appendChild(p);
-        document.querySelector('#codeWindow p').replaceWith(fragment);
+
+        // create an array of code to be written (one letter or tag greater than previous)
+        let codeItem = content.slice(0, i+1);
+        // tracks the current parent to append successive nodes to
+        let parent = p;
+
+        // loops through the codeItem array, adding elements or text nodes to p.
+        codeItem.forEach((c, j) => {
+            // gets class name in opening span tag or null if anything else
+            const newClass = extractClass(c);
+
+            if(newClass) { // array item is opening span tag, appends span with its class to p and sets span as the parent to append following text nodes to
+                parent = addElement(p, 'span', newClass);
+            } else if(c.match(/^<\/span>/)) { // array item is closing span tag, parent is set back to p
+                parent = p;
+            } else if(c === '\n') { // new line converted to <br> element
+                addElement(parent, 'br');
+            } else if(c === ' ' && (codeItem[j+1] === ' ' || codeItem[j-1] === '\u00a0')) { // more than one space in a row, converts to non-breaking spaces
+                addText(parent, '\u00a0')
+            } else { // everything else treated as plain text
+                addText(parent, c);
+            }
+        });
+
+        // replaces existing codeWindow p element with new one
+        document.querySelector('#codeWindow p').replaceWith(p);
 
         i++;
     }, 15);
 }
+
+// extracts the class name from span element opening tag. Returns null if not an opening span tag or no classname present
+function extractClass(tag) {
+    const openTag = tag.match(/^<span class="([\w\W]+?)">$/);
+    return openTag ? openTag[1] : null;
+}
+
+// creates and appends DOM element to parent and adds optional classname to the element. Returns reference to created element
+function addElement(parent, element, className) {
+    let el = document.createElement(element);
+    el.classList.add(className);
+    parent.appendChild(el);
+    return el;
+}
+
+
+// creates and appends text node to parent
+function addText(parent, text) {
+    const txt = document.createTextNode(text);
+    parent.appendChild(txt);
+}
+
 
 // identifies code sample appropriate to the logo clicked
 function selectCode(lang) {
@@ -105,6 +138,7 @@ function selectCode(lang) {
         case java: return javaCode;
     }  
 }
+
 
 /* formats an html-ready code sample, returning a formatted array of single characters or 
 whole html tags */
@@ -117,18 +151,13 @@ function formatCode(code) {
     // loop through input code string as slices, pushing characters or html span tags to output array
     for(let i=0; i<code.length; i++) {
         // holds complete span tag if it is first part of current slice, or null otherwise
-        let span = '';
-        span = code.slice(i).match(spanRegex);
+        let spanTag = code.slice(i).match(spanRegex);
         
         // push whole tag or current character to output array
-        if(span) {
-            formattedArray.push(span);
-            i += span[0].length-1; // increment loop control variable to skip rest of tag 
-        } else if(code[i] === '\n') {
-            formattedArray.push('<br>'); // to ensure correct line breaks in html
-        } else if(code[i] === ' ') {
-            formattedArray.push('&nbsp;') // to ensure correct code indentation in html
-        }else {
+        if(spanTag) {
+            formattedArray.push(spanTag.join(''));
+            i += spanTag[0].length-1; // increment loop control variable to skip rest of tag 
+        } else {
             formattedArray.push(code[i]);
         }
     }

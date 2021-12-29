@@ -270,7 +270,7 @@ nav.show .nav-links {
 .code-demo {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .logos {
@@ -279,8 +279,9 @@ nav.show .nav-links {
 }
 
 .logos img {
-    width: 100px;
-    height: 100px;
+    max-width: 80px;
+    min-width: 0;
+    height: auto;
     margin: 0;
 }
 
@@ -291,7 +292,7 @@ nav.show .nav-links {
     font-size: 0.8rem;
     line-height: 1.2rem;
     background-color: #2b2b2b;
-    width: 450px;
+    max-width: 450px;
     min-height: 200px;
     border: 2px solid black;
 }
@@ -326,4 +327,13 @@ nav.show .nav-links {
     /*background-color: #413f3f;*/
     background-color: #1e1e1e;
     color: #ccc;
+}
+
+
+/* footer */
+footer {
+    color: #ccc;
+    font-size: 0.8rem;
+    font-style: italic;
+    float: right;
 }
