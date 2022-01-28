@@ -14,31 +14,37 @@ html {
 }
 body {
     background-color: black;
-    font-family: 'Open Sans', Helvetica, Tahoma, sans-serif;
+    font-family: Montserrat, sans-serif;
+    font-weight: 300;
     font-size: 1.2rem;
     line-height: 1.8rem;
+    color: rgb(50, 50, 50);
+    background-color: rgb(250, 250, 250);
 }
 h1, h2, h3 {
-    font-family: 'Baloo 2', Helvetica, Tahoma, sans-serif;
+    text-transform: uppercase;
     text-align: center;
+    color: rgb(207, 128, 37);
+    
 }
 h1 {
     font-size: 3.5rem;
     white-space: nowrap;
     margin: 4rem;
+    font-weight: 500;
 }
 h2 {
     font-size: 2.2rem;
     margin: 2rem;
-    padding-bottom: 1rem;
-    border-bottom: 3px solid #0299ff;
+    padding: 1rem;
+    font-weight: 500;
 }
 h3 {
     font-size: 1.8rem;
     margin: 1rem;
     width: fit-content;
-    padding-bottom: 0.5rem;
-    border-bottom: 2px solid #0299ff;
+    padding-bottom: 0.5rem; 
+    font-weight: 400;
 }
 p {
     margin: 1rem 2rem;
@@ -50,14 +56,20 @@ blockquote {
     font-size: 1rem;
     margin: 1rem 2rem 1rem 5rem;
     padding-left: 3rem;
-    border-left: 2px solid #0299ff;
+    border-left: 2px solid rgb(207, 128, 37);
+    clear: both;
 }
 blockquote span {
-    font-weight: bold;
+    font-weight: 400;
+    color:rgb(207, 128, 37);
     display: block;
 }
 section:not(:first-of-type) {
     padding: 4rem 2rem;
+}
+hr {
+    width: 80%;
+    
 }
 
 
@@ -87,6 +99,8 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    text-transform: uppercase;
+    font-weight: 400;
 }
 nav li:first-child {
     display: none; /* home link not required for larger screens version of navigation layout as duplicates homeNav */
@@ -111,9 +125,9 @@ nav a:active {
 }
 
 .homeNav {
-    font-family: 'Oooh Baby', cursive;
-    font-size: 1.5rem;
+    color:rgb(207, 128, 37);
     white-space: nowrap;
+    font-weight: 400;
 }
 
 /* Collapsible nav menu for mobiles */
@@ -128,7 +142,7 @@ nav a:active {
 }
 .line {
     height: 0.125rem;
-    width: 2.1875rem;
+    width: 2rem;
     margin: 0.5rem 0;
     background-color: #ccc;
     transition: transform 0.75s ease, opacity 0.75s ease;
@@ -211,15 +225,15 @@ nav.show .close {
     align-items: center;
     text-align: center;
 }
-.portrait {
+.me {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 80%;
-    
+    max-width: 600px;
 }
-.portrait img {
+.me img {
     border: 1px solid black;
     border-radius: 50%;
     height: 200px;
@@ -227,14 +241,18 @@ nav.show .close {
     background-color: #ffffe9;
     background-image: linear-gradient(to bottom right, #edf6fd, #38363d);
 }
-#banner h2 {
-    margin-top: 3rem;
-    border: none;
-}
 .down-arrow img {
     width: 50px;
     height: 50px;
     margin-bottom: 1rem;
+}
+.me p {
+    margin-top: 2rem;
+    text-align: center;
+}
+.me p span {
+    color: rgb(190, 121, 42);
+    font-weight: 400;
 }
 
 /* phones in landscape mode */
@@ -260,17 +278,33 @@ nav.show .close {
 /* About Me section */
 
 #about {
-    background-color: #423f3b;
-    color: #ccc;
+    margin: 0 auto;
+    max-width: 1000px;
 }
 
+#about figure {
+    width: 200px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 0 2rem;
+}
+#about img {
+    width: 100%;
+}
+#about figcaption {
+    font-size: 1rem;
+    font-style: italic;
+    color:rgb(207, 128, 37)
+}
+.kayak {
+    float: left;
+}
+.squirrel {
+    float: right;
+    text-align: right;
+}
 
 /* Skills section */
-
-#skills {
-    color: #423f3b;
-    background-color: #ccc;
-}
 
 .skills-list ul {
     display: flex;
@@ -284,7 +318,7 @@ nav.show .close {
     padding: 1rem;
     margin: 1rem;
     background-color: rgba(255,255,255,0.2);
-    border: 1px solid #0299ff;
+    /*border: 1px solid #0299ff;*/
     border-radius: 5px;
     text-align: center;
     box-shadow: 5px 5px 5px rgb(150, 148, 148);
@@ -350,9 +384,6 @@ nav.show .close {
 
 /* Projects section */
 
-#projects {
-    background-color: silver;
-}
 .projects-group {
     display: flex;
     justify-content: space-evenly;
@@ -363,7 +394,7 @@ nav.show .close {
     padding: 1rem;
     margin: 1rem;
     background-color: rgba(255, 255, 255, 0.2);
-    border: 1px solid #0299ff;
+    /*border: 1px solid #0299ff;*/
     border-radius: 5px;
     margin: 1rem;
     max-width: 300px;
@@ -385,10 +416,6 @@ nav.show .close {
 
 /* Contact section */
 
-#contact {
-    background-color: #1e1e1e;
-    color: #ccc;
-}
 #contact p {
     text-align: center;
     margin: 3rem 2rem 2rem;
@@ -428,6 +455,8 @@ footer {
     flex-wrap: wrap-reverse;
     font-size: 1rem;
     padding: 1rem;
+    color: #ccc;
+    background-color: rgb(20, 20, 20);
 }
 footer p {
     color: #ccc;
