@@ -42,7 +42,6 @@ h2 {
 h3 {
     font-size: 1.8rem;
     margin: 1rem;
-    width: fit-content;
     padding-bottom: 0.5rem; 
     font-weight: 400;
 }
@@ -56,13 +55,8 @@ blockquote {
     font-size: 1rem;
     margin: 1rem 2rem 1rem 5rem;
     padding-left: 3rem;
-    border-left: 2px solid rgb(207, 128, 37);
+    border-left: 5px solid rgb(207, 128, 37);
     clear: both;
-}
-blockquote span {
-    font-weight: 400;
-    color:rgb(207, 128, 37);
-    display: block;
 }
 section:not(:first-of-type) {
     padding: 4rem 2rem;
@@ -239,7 +233,7 @@ nav.show .close {
     height: 200px;
     width: 200px;
     background-color: #ffffe9;
-    background-image: linear-gradient(to bottom right, #edf6fd, #38363d);
+    background-image: linear-gradient(to bottom right, #fdf7ed, #3d3a36);
 }
 .down-arrow img {
     width: 50px;
@@ -283,29 +277,75 @@ nav.show .close {
 }
 
 #about figure {
-    width: 200px;
-    border: 1px solid #ccc;
-    padding: 5px;
-    margin: 0 2rem;
+    margin: 0.5rem 1rem 1rem 2rem;
+    width: 195px;
+    position: relative;
+    border-radius: 5px;
 }
 #about img {
     width: 100%;
+    border-radius: 5px; 
 }
 #about figcaption {
-    font-size: 1rem;
+    font-size: 0.875rem;
     font-style: italic;
-    color:rgb(207, 128, 37)
+    font-weight: 400;
+    color:rgb(207, 128, 37);
+    padding: 0 5px;
+    border-radius: 5px 5px 0 0;
 }
 .kayak {
     float: left;
 }
 .squirrel {
+    clear: left;
     float: right;
     text-align: right;
 }
+.kayak figcaption {
+    position: absolute;
+    top: 3px;
+    background-color: rgba(0, 0, 0, 0.2);
+    text-align: right;
+    line-height: 1.2rem;
+}
+.squirrel figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+#about p span {
+    color:rgb(207, 128, 37);
+    font-weight: 400;
+}
+#about p:last-child {
+    padding-top: 1rem;
+}
+.clear-left {
+    clear: left;
+}
+.quote-mark {
+    font-weight: 400;
+    font-size: 1.1rem;
+    letter-spacing: 2px;
+}
+.author {
+    font-weight: 400;
+    color:rgb(207, 128, 37);
+    display: block;
+}
+@media only screen and (max-width: 480px) {
+    #about figure {
+        float: none;
+        display: block;
+        margin: 0 auto;
+    }
+}
+
 
 /* Skills section */
-
+/*
 .skills-list ul {
     display: flex;
     justify-content: center;
@@ -318,11 +358,44 @@ nav.show .close {
     padding: 1rem;
     margin: 1rem;
     background-color: rgba(255,255,255,0.2);
-    /*border: 1px solid #0299ff;*/
     border-radius: 5px;
     text-align: center;
     box-shadow: 5px 5px 5px rgb(150, 148, 148);
 }
+*/
+
+.skills-list {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.skills-list h3, .skills-list p {
+    text-align: center;  
+}
+.list-level1 img {
+    display: block;
+    margin: 0 auto;
+    width: 100px;
+}
+.list-level1 p {
+    font-weight: bold;
+}
+.list-level2 p {
+    font-weight: 500;
+}
+.list-level2 img {
+    display: block;
+    margin: 0 auto;
+    width: 50px;
+}
+.list-level2 {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: baseline;
+}
+
+
+
+
 .other-skills {
     margin-top: 3rem;
     margin: 3rem auto;
@@ -388,17 +461,15 @@ nav.show .close {
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    align-items: stretch;
+    /*align-items: stretch;*/ 
 }
 .project {
-    padding: 1rem;
     margin: 1rem;
-    background-color: rgba(255, 255, 255, 0.2);
-    /*border: 1px solid #0299ff;*/
-    border-radius: 5px;
-    margin: 1rem;
-    max-width: 300px;
-    box-shadow: 5px 5px 5px rgb(150, 148, 148);
+    border: 1px solid #ccc;
+    width: 300px;
+    height: 450px;
+    flex: 0 0 auto;
+    position: relative;
 }
 .project h3 {
     width: 90%;
@@ -406,11 +477,53 @@ nav.show .close {
 .project p, .project a {
     text-align: center;
 }
+.project p {
+    color:rgb(250, 250, 250);
+}
 .project span {
     font-style: italic;
+    font-weight: 400;
+    color:rgb(207, 128, 37);
 }
 .project a {
-    color: #0299ff;
+    color: rgb(50, 50, 50);
+    background-color: rgb(250, 250, 250);
+    padding: 5px;
+    width: 160px;
+    position: absolute;
+    top: 370px;
+    left: 70px;
+    border: 3px solid rgb(50, 50, 50);
+    z-index: 1;
+}
+.filter {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.8);  
+}
+.filter:hover {
+    opacity: 0;
+}
+.drone-project {
+    background-image: url(../images/basemap.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.code-window-project {
+    background-image: url(../images/codewindow.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.you-cook-project {
+    background-image: url(../images/you-cook.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 
@@ -440,9 +553,6 @@ nav.show .close {
     font-size: 1rem;
     text-align: center;
 
-}
-.contact-links a {
-    color: #ccc;   
 }
 
 
@@ -474,4 +584,3 @@ footer img {
     height: auto;
     vertical-align: middle;
 }
-
