@@ -287,13 +287,13 @@ nav.show .close {
     vertical-align: middle;
 }
 #about figcaption {
-    font-size: 0.875rem;
+    font-size: 1rem;
     font-style: italic;
     font-weight: 400;
     line-height: 1.2rem;
-    color: white;
+    color: rgb(250, 250, 250);
     background-color: rgba(0, 0, 0, 0.2);
-    padding: 0 5px;
+    padding: 5px 5px;
     border-radius: 5px 5px 0 0;
     position: absolute;
 }
@@ -304,16 +304,16 @@ nav.show .close {
 .squirrel {
     clear: left;
     float: right;
-    text-align: right;
+    text-align: center;
     width: 195px;
 }
 .kayak figcaption {
-    top: 5px;
+    top: 0;
     right: 5px;
     text-align: right;
 }
 .squirrel figcaption {
-    top: 2px;
+    top: 0;
     left: 0;
 }
 #about p span {
@@ -472,6 +472,9 @@ nav.show .close {
     height: 450px;
     flex: 0 0 auto;
     position: relative;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 .project h3 {
     width: 90%;
@@ -491,10 +494,10 @@ nav.show .close {
     color: rgb(50, 50, 50);
     background-color: rgb(250, 250, 250);
     padding: 5px;
-    width: 160px;
+    width: 180px;
     position: absolute;
     top: 370px;
-    left: 70px;
+    left: 60px;
     border: 3px solid rgb(50, 50, 50);
     border-radius: 5px;
     z-index: 1;
@@ -513,21 +516,12 @@ nav.show .close {
 }
 .drone-project {
     background-image: url(../images/basemap.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 .code-window-project {
     background-image: url(../images/codewindow.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 .you-cook-project {
     background-image: url(../images/you-cook.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
 }
 
 
@@ -551,7 +545,7 @@ nav.show .close {
     margin: 0 auto;
     border: 1px solid #ccc;
     border-radius: 5px;
-    box-shadow: 3px 3px 3px black;
+    box-shadow: 3px 3px 3px #aaa;
 }
 .contact-links figcaption {
     font-size: 1rem;
