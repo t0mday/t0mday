@@ -52,7 +52,6 @@ p {
 blockquote {
     text-align: left;
     font-style: italic;
-    font-size: 1rem;
     margin: 1rem 2rem 1rem 5rem;
     padding-left: 3rem;
     border-left: 5px solid rgb(207, 128, 37);
@@ -278,42 +277,44 @@ nav.show .close {
 
 #about figure {
     margin: 0.5rem 1rem 1rem 2rem;
-    width: 195px;
     position: relative;
     border-radius: 5px;
+    box-shadow: 3px 3px 3px #aaa;
 }
 #about img {
     width: 100%;
     border-radius: 5px; 
+    vertical-align: middle;
 }
 #about figcaption {
     font-size: 0.875rem;
     font-style: italic;
     font-weight: 400;
-    color:rgb(207, 128, 37);
+    line-height: 1.2rem;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.2);
     padding: 0 5px;
     border-radius: 5px 5px 0 0;
+    position: absolute;
 }
 .kayak {
     float: left;
+    width: 240px;
 }
 .squirrel {
     clear: left;
     float: right;
     text-align: right;
+    width: 195px;
 }
 .kayak figcaption {
-    position: absolute;
-    top: 3px;
-    background-color: rgba(0, 0, 0, 0.2);
+    top: 5px;
+    right: 5px;
     text-align: right;
-    line-height: 1.2rem;
 }
 .squirrel figcaption {
-    position: absolute;
-    top: 0;
+    top: 2px;
     left: 0;
-    background-color: rgba(0, 0, 0, 0.2);
 }
 #about p span {
     color:rgb(207, 128, 37);
@@ -466,6 +467,7 @@ nav.show .close {
 .project {
     margin: 1rem;
     border: 1px solid #ccc;
+    border-radius: 10px;
     width: 300px;
     height: 450px;
     flex: 0 0 auto;
@@ -494,6 +496,7 @@ nav.show .close {
     top: 370px;
     left: 70px;
     border: 3px solid rgb(50, 50, 50);
+    border-radius: 5px;
     z-index: 1;
 }
 .filter {
@@ -502,7 +505,8 @@ nav.show .close {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.8);  
+    background-color: rgba(0, 0, 0, 0.8);
+    border-radius: 10px;
 }
 .filter:hover {
     opacity: 0;
