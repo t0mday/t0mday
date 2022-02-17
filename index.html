@@ -186,29 +186,69 @@
         <section id="projects">
             <h2>Projects</h2>
             <div class="projects-group">
-                <div class="project drone-project">
-
-                    <div class="filter">
-                        <h3>Drone Flight Validation</h3>
-                        <p>Prototype part of a larger application to plot and validate drone flight plans. Uses <span>NodeJS</span> and <span>Canvas</span>.</p>
-                        <p> </p>
+                <div class="project-container">
+                    <div class="project" onclick="flip(event)">
+                        <div class="front-face">
+                            <h3>You Cook</h3>
+                            <img class="project-main-img" src="resources/images/you-cook-landscape.jpg" alt="you cook project">
+                            <img class="project-logo project-img-1" src="resources/images/logos/react.png" alt="react logo">
+                            <img class="project-logo project-img-2" src="resources/images/logos/redux.png" alt="redux logo">
+                        </div>
+                        <div class="back-face">
+                            <h3>You Cook</h3>
+                            <p>An app to search online recipes and save to favourites. Calls a 3rd party API.</p>
+                            <p>Uses <span>React</span> and <span>Redux</span>.</p>
+                            <a href="#contact">See it on Github</a>
+                        </div>
                     </div>
-                </div>
-                <div class="project code-window-project">
-                    <h3>Code Window</h3>
-
-                    <div class="picture">
-                        
-                        
+                </div>    
+                <div class="project-container">
+                    <div class="project" onclick="flip(event)">
+                        <div class="front-face">
+                            <h3>Drone Flight Validation</h3>
+                            <img class="project-main-img" src="resources/images/you-cook-landscape.jpg" alt="you cook project">
+                            <img class="project-logo project-img-1" src="resources/images/logos/react.png" alt="react logo">
+                            <img class="project-logo project-img-2" src="resources/images/logos/redux.png" alt="redux logo">
+                        </div>
+                        <div class="back-face">
+                            <h3>Drone Flight Validation</h3>
+                            <p>Prototype part of a larger application to plot and validate drone flight plans.</p>
+                            <p>Uses <span>NodeJS</span> and <span>Canvas</span>.</p>
+                            <a href="#contact">See it on Github</a>
+                        </div>
                     </div>
-                </div>
-                <div class="project you-cook-project">
-                    <h3>You Cook</h3>
-                    <img class="project-main-img" src="resources/images/you-cook-landscape.jpg" alt="you cook project">
-                    <img class="project-logo project-img-1" src="resources/images/logos/react.png" alt="react logo">
-                    <img class="project-logo project-img-2" src="resources/images/logos/redux.png" alt="redux logo">
-
-                </div>
+                </div>    
+                <div class="project-container">
+                    <div class="project" onclick="flip(event)">
+                        <div class="front-face">
+                            <h3>Code Window</h3>
+                            <img class="project-main-img" src="resources/images/you-cook-landscape.jpg" alt="you cook project">
+                            <img class="project-logo project-img-1" src="resources/images/logos/react.png" alt="react logo">
+                            <img class="project-logo project-img-2" src="resources/images/logos/redux.png" alt="redux logo">
+                        </div>
+                        <div class="back-face">
+                            <h3>Code Window</h3>
+                            <p>Takes marked-up code and writes to a browser window with typing animation, applying styles on the fly. Uses <span>Javascript</span>, <span>CSS</span> and <span>HTML</span>.</p>
+                            <a href="#contact">See it on Github</a>
+                        </div>
+                    </div>
+                </div>    
+                <div class="project-container">
+                    <div class="project" onclick="flip(event)">
+                        <div class="front-face">
+                            <h3>You Cook</h3>
+                            <img class="project-main-img" src="resources/images/you-cook-landscape.jpg" alt="you cook project">
+                            <img class="project-logo project-img-1" src="resources/images/logos/react.png" alt="react logo">
+                            <img class="project-logo project-img-2" src="resources/images/logos/redux.png" alt="redux logo">
+                        </div>
+                        <div class="back-face">
+                            <h3>You Cook</h3>
+                            <p>An app to search online recipes and save to favourites. Calls a 3rd party API.</p>
+                            <p>Uses <span>React</span> and <span>Redux</span>.</p>
+                            <a href="#contact">See it on Github</a>
+                        </div>
+                    </div>
+                </div>    
             </div>         
         </section>
         <hr>
@@ -247,5 +287,6 @@
     <script src="./resources/scripts/storeScroll.js"></script>
     <script src="./resources/scripts/mobileNav.js"></script>
     <script src="./resources/scripts/codeWindow.js"></script>
+    <script src="./resources/scripts/flipProject.js"></script>
 </body>
 </html>

@@ -13,7 +13,6 @@ html {
     }
 }
 body {
-    background-color: black;
     font-family: Montserrat, sans-serif;
     font-weight: 300;
     font-size: 1.2rem;
@@ -299,13 +298,13 @@ nav.show .close {
 }
 .kayak {
     float: left;
-    width: 240px;
+    width: 230px;
 }
 .squirrel {
     clear: left;
     float: right;
     text-align: center;
-    width: 195px;
+    width: 170px;
 }
 .kayak figcaption {
     top: 0;
@@ -460,27 +459,58 @@ nav.show .close {
 
 .projects-group {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
-    /*align-items: stretch;*/ 
 }
-.project {
-    margin: 1rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+.project-container {
+    margin: 30px;
     width: 450px;
     height: 300px;
+    perspective: 1000px;
+    border-radius: 5px;
+}
+.project {
+    width: 100%;
+    height: 100%;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    border-radius: 5px;
+}
+.project h3 {
+    margin: 1rem 0.2rem;
+}
+.front-face, .back-face {
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.front-face {
+    border: 2px solid black;
     display: grid;
     grid-template: repeat(5, 20%) / 10% 90%;
     background-color: rgb(20, 20, 20);
 }
-.project img {
+.back-face {
+    border: 2px solid black;
+    background-color: rgb(20, 20, 20);
+    transform: rotateY(180deg);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.front-face img {
     width: 100%;
 }
 .project-logo {
     padding: 5px;
 }
-.project h3 {
+.front-face h3 {
     grid-area: 1 / 1 / span 1 / span 2;
 }
 .project-main-img {
@@ -501,56 +531,21 @@ nav.show .close {
 .project-img-4 {
     grid-area: 5 / 1 / span 1 / span 1;
 }
-
-/*
-.project h3 {
-    width: 90%;
-}
-.project p, .project a {
+.back-face p {
+    color:rgb(250, 250, 250);
     text-align: center;
 }
-.project p {
-    color:rgb(250, 250, 250);
+.back-face span {
+      color:rgb(207, 128, 37);
 }
-.project span {
-    font-style: italic;
-    font-weight: 400;
-    color:rgb(207, 128, 37);
+.back-face a {
+      background-color: rgb(250, 250, 250);
+      padding: 5px;
+      border: 1px solid black;
+      border-radius: 5px;
+      margin: 10px;
 }
-.project a {
-    color: rgb(50, 50, 50);
-    background-color: rgb(250, 250, 250);
-    padding: 5px;
-    width: 180px;
-    position: absolute;
-    top: 370px;
-    left: 60px;
-    border: 3px solid rgb(50, 50, 50);
-    border-radius: 5px;
-    z-index: 1;
-}
-.filter {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    background-color: rgba(0, 0, 0, 0.8);
-    border-radius: 10px;
-}
-.filter:hover {
-    opacity: 0;
-}
-.drone-project {
-    background-image: url(../images/basemap.png);
-}
-.code-window-project {
-    background-image: url(../images/codewindow.png);
-}
-.you-cook-project {
-    background-image: url(../images/you-cook.png);
-}
-*/
+
 
 /* Contact section */
 
