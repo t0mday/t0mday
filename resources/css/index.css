@@ -467,7 +467,7 @@ nav.show .close {
 .project {
     margin: 1rem;
     border: 1px solid #ccc;
-
+    border-radius: 5px;
     width: 450px;
     height: 300px;
     display: grid;
@@ -487,6 +487,7 @@ nav.show .close {
     grid-area: 2 / 2 / span 4 / span 1;
     height: 100%;
     border:5px solid rgb(20, 20, 20);
+    border-radius: 5px;
 }
 .project-img-1 {
     grid-area: 2 / 1 / span 1 / span 1;
