@@ -7,7 +7,7 @@
 html {
     font-size: 16px;
 }
-@media only screen and (max-width: 370px) {
+@media only screen and (max-width: 400px) {
     html {
         font-size: 12px;
     }
@@ -57,7 +57,7 @@ blockquote {
     clear: both;
 }
 section:not(:first-of-type) {
-    padding: 4rem 2rem;
+    padding: 4rem 0.5rem;
 }
 hr {
     width: 80%;
@@ -205,7 +205,7 @@ nav.show .close {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
-    color: #ccc;                            /* banner color */
+    color: #ccc;                            
 }
 .inner {
     background-color: rgba(0, 0, 0, 0.8);
@@ -466,7 +466,7 @@ nav.show .close {
     margin: 30px;
     width: 450px;
     height: 300px;
-    perspective: 1000px;
+    perspective: 1200px;
     border-radius: 5px;
 }
 .project {
@@ -480,42 +480,19 @@ nav.show .close {
 .project h3 {
     margin: 1rem 0.2rem;
 }
-.front-face, .back-face {
-    border-radius: 5px;
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
-}
-.front-face {
-    border: 2px solid black;
-    display: grid;
-    grid-template: repeat(5, 20%) / 10% 90%;
-    background-color: rgb(20, 20, 20);
-}
-.back-face {
-    border: 2px solid black;
-    background-color: rgb(20, 20, 20);
-    transform: rotateY(180deg);
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-}
-.front-face img {
-    width: 100%;
-}
 .project-logo {
     padding: 5px;
+    border-radius: 5px;
 }
-.front-face h3 {
-    grid-area: 1 / 1 / span 1 / span 2;
+.project-logo {
+    max-height: 100%;
+    object-fit: contain;
 }
 .project-main-img {
     grid-area: 2 / 2 / span 4 / span 1;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: cover;
     border:5px solid rgb(20, 20, 20);
     border-radius: 5px;
 }
@@ -531,12 +508,40 @@ nav.show .close {
 .project-img-4 {
     grid-area: 5 / 1 / span 1 / span 1;
 }
+.front-face, .back-face {
+    background-color: rgb(20, 20, 20);
+    border: 2px solid black;
+    border-radius: 5px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+.front-face {
+    display: grid;
+    grid-template: repeat(5, 20%) / 10% 90%;
+}
+.front-face img {
+    width: 100%;
+}
+.front-face h3 {
+    grid-area: 1 / 1 / span 1 / span 2;
+}
+.back-face {
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
 .back-face p {
     color:rgb(250, 250, 250);
     text-align: center;
 }
 .back-face span {
       color:rgb(207, 128, 37);
+      font-weight: 400;
 }
 .back-face a {
       background-color: rgb(250, 250, 250);
@@ -544,6 +549,35 @@ nav.show .close {
       border: 1px solid black;
       border-radius: 5px;
       margin: 10px;
+}
+@media only screen and (max-width: 530px) {
+    .project-container {
+        height: 330px;
+    }
+    .project h3 {
+        font-size: 21px;
+    }
+    .front-face {
+        grid-template: 20% 60% 20% / repeat(4, 25%);
+    }
+    .front-face h3 {
+        grid-area: 1 / 1 / span 1 / span 4;
+    }
+    .project-main-img {
+        grid-area: 2 / 1 / span 1 / span 4;
+    }
+    .project-img-1 {
+        grid-area: 3 / 1 / span 1 / span 1;
+    }
+    .project-img-2 {
+        grid-area: 3 / 2 / span 1 / span 1;
+    }
+    .project-img-3 {
+        grid-area: 3 / 3 / span 1 / span 1;
+    }
+    .project-img-4 {
+        grid-area: 3 / 4 / span 1 / span 1;
+    }
 }
 
 

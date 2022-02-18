@@ -1,4 +1,4 @@
-/* This script flips project cards when clicked */
+/* This script flips the project cards when clicked */
 
 
 const flip = ({currentTarget}) => {
