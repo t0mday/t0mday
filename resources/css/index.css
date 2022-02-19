@@ -348,12 +348,68 @@ nav.show .close {
 /* Skills section */
 
 .skills-table {
+    display: grid;
+    grid-template: repeat(4, auto) / 40% 3px 1fr;
+    padding-top: 30px;
+}
+.skill-heading {
+    max-width: 300px;
+    justify-self: right;
+}
+.skill-heading h3 {
+    text-align: right;
+}
+.skill-contents {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    padding-bottom: 50px;
+}
+.skill-wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    width: 95%;
+    width: 110px;
+    padding-left: 30px;
 }
+.languages.skill-heading {
+    grid-area: 1 / 1 / span 1 / span 1;
+}
+.languages.skill-contents {
+    grid-area: 1 / 3 / span 1 / span 1;
+}
+.front-end.skill-heading {
+    grid-area: 2 / 1 / span 1 / span 1;
+}
+.front-end.skill-contents {
+    grid-area: 2 / 3 / span 1 / span 1;
+}
+
+/*
+.front-end h3 {
+    grid-area: 2 / 1 / span 1 / span 1;
+}
+.front-end ul {
+    grid-area: 2 / 3 / span 1 / span 1;
+}
+.back-end h3 {
+    grid-area: 3 / 1 / span 1 / span 1;
+}
+.back-end ul {
+    grid-area: 3 / 3 / span 1 / span 1;
+}
+.testing h3 {
+    grid-area: 4 / 1 / span 1 / span 1;
+}
+.testing ul {
+    grid-area: 4 / 3 / span 1 / span 1;
+}*/
+.divider {
+    grid-area: 1 / 2 / span 4 / span 1;
+    height: 100%;
+    width: 1px;
+    border: 1px solid #aaa;
+}/*
 .skills-row {
     width: 100%;
     display: flex;
@@ -367,16 +423,16 @@ nav.show .close {
     display: inline-block;
     text-align: center;
     padding: 20px;
-}
-.skills-row img {
+}*/
+.skill-wrapper img {
     width: 50px;
     height: 50px;
     border-radius: 10px;
-}
+}/*
 .skills-row p {
     margin: 0;
     text-align: center;
-}
+}*/
 
 
 /* Projects section */
