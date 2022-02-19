@@ -346,52 +346,36 @@ nav.show .close {
 
 
 /* Skills section */
-/*
-.skills-list ul {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    max-width: 500px;
-    margin: 0 auto;
-}
-.skills-list li {
-    flex: 1 0 15%;
-    padding: 1rem;
-    margin: 1rem;
-    background-color: rgba(255,255,255,0.2);
-    border-radius: 5px;
-    text-align: center;
-    box-shadow: 5px 5px 5px rgb(150, 148, 148);
-}
-*/
 
-.skills-list {
-    max-width: 1000px;
-    margin: 0 auto;
-}
-.skills-list h3, .skills-list p {
-    text-align: center;  
-}
-.list-level1 img {
-    display: block;
-    margin: 0 auto;
-    width: 100px;
-}
-.list-level1 p {
-    font-weight: bold;
-}
-.list-level2 p {
-    font-weight: 500;
-}
-.list-level2 img {
-    display: block;
-    margin: 0 auto;
-    width: 50px;
-}
-.list-level2 {
+.skills-table {
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: space-evenly;
-    align-items: baseline;
+    width: 95%;
+}
+.skills-row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+.skill-heading {
+    font-size: 1.2rem;
+}
+.skills-row li {
+    display: inline-block;
+    text-align: center;
+    padding: 20px;
+}
+.skills-row img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+}
+.skills-row p {
+    margin: 0;
+    text-align: center;
 }
 
 
