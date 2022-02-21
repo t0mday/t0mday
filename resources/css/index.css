@@ -48,14 +48,6 @@ p {
     margin: 1rem 2rem;
     text-align: left;
 }
-blockquote {
-    text-align: left;
-    font-style: italic;
-    margin: 1rem 2rem 1rem 5rem;
-    padding-left: 3rem;
-    border-left: 5px solid rgb(207, 128, 37);
-    clear: both;
-}
 section:not(:first-of-type) {
     padding: 4rem 0.5rem;
 }
@@ -274,7 +266,14 @@ nav.show .close {
     margin: 0 auto;
     max-width: 1000px;
 }
-
+#about blockquote {
+    text-align: left;
+    font-style: italic;
+    margin: 1rem 2rem 1rem 5rem;
+    padding-left: 3rem;
+    border-left: 5px solid rgb(207, 128, 37);
+    margin-bottom: 2rem;
+}
 #about figure {
     margin: 0.5rem 1rem 1rem 2rem;
     position: relative;
@@ -518,6 +517,13 @@ nav.show .close {
       border: 1px solid black;
       border-radius: 5px;
       margin: 10px;
+      width: 165px;
+      text-align: center;
+}
+.project-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 @media only screen and (max-width: 530px) {
     .project-container {
